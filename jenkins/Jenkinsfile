@@ -1,6 +1,6 @@
 pipeline {
 	agent any
-	enviroment {
+	environment {
 		SERVER_PORT = '8082'
 	}
 	
