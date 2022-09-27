@@ -17,7 +17,7 @@ public class CalculatorSimulation extends Simulation {
             .doNotTrackHeader("1")
             .acceptLanguageHeader("en-US,en;q=0.5")
             .acceptEncodingHeader("gzip, deflate")
-            .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0");
+            .userAgentHeader("Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0");
 
     ScenarioBuilder scn = scenario("Simple stress test")
             .exec(http("History request")
