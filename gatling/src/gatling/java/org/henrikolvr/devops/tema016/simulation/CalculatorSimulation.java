@@ -21,7 +21,7 @@ public class CalculatorSimulation extends Simulation {
 
     ScenarioBuilder scn = scenario("Simple stress test")
             .exec(http("History request")
-                    .get("calc/history")
+                    .get("/calc/history")
                     .check(status().is(200)));
 
     {
