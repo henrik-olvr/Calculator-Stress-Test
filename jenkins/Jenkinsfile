@@ -15,7 +15,7 @@ pipeline {
 			when {
 				not {
 					expression {
-						return sh(returnStdout: true, script: 'docker ps -a -f name=go-calculator -q').trim() == ""
+						return sh(returnStdout: true, script: 'docker ps -a -f name=calculator-go -q').trim() == ""
 					}
 				}
 			}
