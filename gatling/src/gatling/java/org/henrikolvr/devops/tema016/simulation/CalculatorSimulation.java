@@ -28,7 +28,6 @@ public class CalculatorSimulation extends Simulation {
         setUp(scn.injectOpen(
                 rampUsersPerSec(1).to(900).during(60),
                 rampUsersPerSec(1).to(900).during(60).randomized()
-        ).protocols(httpProtocol))
-                .assertions(global().responseTime().max().lt(1000));
+        ).protocols(httpProtocol));
     }
 }
