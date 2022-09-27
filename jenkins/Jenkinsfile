@@ -7,7 +7,7 @@ pipeline {
 	stages {
 		stage('Build Docker Image') {
 			steps {
-				sh 'docker build -t henrikolvr/calculator-go:latest ./docker'
+				sh 'docker build -t henrikol/go-calculator:latest ./docker'
 			}
 		}
 		
@@ -15,19 +15,19 @@ pipeline {
 			when {
 				not {
 					expression {
-						return sh(returnStdout: true, script: 'docker ps -a -f name=calculator-go -q').trim() == ""
+						return sh(returnStdout: true, script: 'docker ps -a -f name=go-calculator -q').trim() == ""
 					}
 				}
 			}
 			steps {
-				sh 'docker stop calculator-go'
-				sh 'docker rm calculator-go'
+				sh 'docker stop go-calculator'
+				sh 'docker rm go-calculator'
 			}
 		}
 		
 		stage('Run Docker Container') {
 			steps {
-				sh 'docker run --name calculator-go -p ${SERVER_PORT}:8080 -d henrikolvr/calculator-go:latest'
+				sh 'docker run --name go-calculator -p ${SERVER_PORT}:8080 -d henrikol/go-calculator:latest'
 			}
 		}
 		
